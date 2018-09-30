@@ -1,5 +1,4 @@
 # Configuration files
-.env
 
 downloaded_documents/*
 
@@ -59,5 +58,3 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-.env
