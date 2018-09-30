@@ -1,0 +1,25 @@
+{
+  "name": "DocuSign_quick_start_list_envelopes",
+  "version": "1.0.0",
+  "description": "DocuSign simple node list envelopes status",
+  "main": "index.js",
+  "scripts": {
+    "debug": "node  --inspect-brk index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/docusign-hackathons/eg"
+  },
+  "author": "DocuSign",
+  "license": "MIT",
+  "homepage": "https://github.com/docusign/eg-01-node-jwt#readme",
+  "engines": {
+    "node": ">=8.10"
+  },
+  "dependencies": {
+    "docusign-esign": "^4.0.2",
+    "express": "^4.16.3",
+    "moment": "^2.22.2"
+  }
+}
