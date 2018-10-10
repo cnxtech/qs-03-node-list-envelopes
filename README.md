@@ -10,7 +10,7 @@ This example does not include authentication. For full Node.js examples, see:
 
 ## Installation and Setup
 See the
-[SETUP.md](https://github.com/docusign/qs-03-node-send-envelope/blob/master/SETUP.md)
+[SETUP.md](https://github.com/docusign/qs-03-node-list-envelopes/blob/master/SETUP.md)
 file for installation and setup steps.
 
 ## Running the example
