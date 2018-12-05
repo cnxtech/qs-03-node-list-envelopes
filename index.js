@@ -25,7 +25,6 @@
 const docusign = require('docusign-esign')
     , process = require('process')
     , moment = require('moment')
-    , {promisify} = require('util') // http://2ality.com/2017/05/util-promisify.html
     , basePath = 'https://demo.docusign.net/restapi'
     , express = require('express')
     , envir = process.env
@@ -61,13 +60,11 @@ async function listEnvelopesController (req, res) {
   docusign.Configuration.default.setDefaultApiClient(apiClient);
 
   let envelopesApi = new docusign.EnvelopesApi()
-      // createEnvelopePromise returns a promise with the results:
-    , listStatusChangesPromise = promisify(envelopesApi.listStatusChanges).bind(envelopesApi)
     , results
     ;
 
   try {
-    results = await listStatusChangesPromise(accountId, options)
+    results = await envelopesApi.listStatusChanges(accountId, options)
   } catch  (e) {
     let body = e.response && e.response.body;
     if (body) {
@@ -83,7 +80,7 @@ async function listEnvelopesController (req, res) {
   // Process results:
   if (results) {
     res.send (`<html lang="en"><body>
-                <h3>Listing your envelopes that were created in the last 10 days</h3>
+                <h3>Listing your envelopes that had a status change in the last 10 days</h3>
                 <p>Results</p><p><pre><code>${JSON.stringify(results, null, 4)}</code></pre></p>`);
   }
 }
